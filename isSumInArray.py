@@ -15,6 +15,12 @@ arr100 = range(100)
 
 
 def naiveAlgo(arr, result):
+    """
+    Naive algo, looks at each element and loop through array looking for
+    second element that adds up to result
+    @param: arr, int[]
+    @param: result: int
+    """
     step = 0
     # Run through the list
     for i in range(0, len(arr)):
@@ -23,20 +29,26 @@ def naiveAlgo(arr, result):
         for j in range(i, len(arr)):
             step+=1
             if arr[i] + arr[j] == result:
-                return arr[i], arr[j]
+                return arr[i], arr[j], step
     else:
         return 0
 
 
 def binaryAlgo(arr, result):
+    """
+    Algo that loops through the array once, looking for element that adds up to
+    result with a binary search
+    @param: arr, int[]
+    @param: result: int
+    """
     step = 0
     for i in range(len(arr)):
         step+=1
         toResult = result - arr[i]
         binaryTest = binarySearch(arr, toResult)
-        print(binaryTest)
-#        if binaryTest >= 0:
-#            return arr[i], arr[binaryTest]
+        if binaryTest[0] >= 0:
+            step += binaryTest[1]
+            return arr[i], arr[binaryTest[0]], step
     return 0
             
 
@@ -59,10 +71,17 @@ def binarySearch(arr, num):
     if arr[indDebut] == num:
         return indDebut, step
     else:
-        return -1
+        return -1, step
 
 
 def twoEndsSearch(arr, result):
+    """
+    Algo that starts at each ends of the array, adds up the two element, if sum
+    is greater than result, moves up the array, if sum is less than result,
+    moves down the array. Stop when result is found or when the ends meet
+    @param: arr, int[]
+    @param: result: int
+    """
     step = 0
     smallInd = 0
     bigInd = int(len(arr)-1)
@@ -77,7 +96,7 @@ def twoEndsSearch(arr, result):
         else:
             smallInd+=1
     if trouve:
-        return arr[smallInd], arr[bigInd]
+        return arr[smallInd], arr[bigInd], step
     else:
         return 0
 
