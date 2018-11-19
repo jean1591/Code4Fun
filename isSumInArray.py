@@ -11,7 +11,6 @@ to the int
 
 arr1 = [1, 2, 3, 4]
 arr2 = [1, 2, 4, 4]
-arr100 = range(100)
 
 
 def naiveAlgo(arr, result):
