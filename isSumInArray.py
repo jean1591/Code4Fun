@@ -5,8 +5,8 @@ Created on Sun Nov 18 15:18:24 2018
 
 @author: jean
 
-Given an array of int and an int, finds if two numbers within the array sum up
-to the int
+Looks in an array if two numbers add up to a defined number, use different 
+algo to check efficiency
 """
 
 arr1 = [1, 2, 3, 4]

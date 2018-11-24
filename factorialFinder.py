@@ -9,6 +9,10 @@ Returns the factorial of a given number
 """
 
 def recursAlgo(num):
+    """
+    Calculates the factorial of a given number
+    @param num: int
+    """
     if num < 2:
         return 1
     else:

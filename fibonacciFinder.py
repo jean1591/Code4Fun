@@ -5,11 +5,15 @@ Created on Mon Nov 19 21:05:25 2018
 
 @author: jean
 
-Given n, returns the nth Fibonacci's number
+Returns the nth number of the Fibonacci sequence
 """
 
 
 def recursAlgo(num):
+    """
+    Recursive algo, calculate each number each time
+    @param num: int
+    """
     if num <= 1:
         return num
     else:
@@ -17,6 +21,11 @@ def recursAlgo(num):
 
 
 def optimizedAlgo(num):
+    """
+    Optimized algo, store each number in an array and calculates the nth number
+    from that array
+    @param num: int
+    """
     if num <= 1:
         return num
     else:
