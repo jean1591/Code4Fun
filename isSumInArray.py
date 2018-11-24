@@ -101,7 +101,7 @@ def twoEndsSearch(arr, result):
 
 
 
-testNumber = 8
+testNumber = 6
 print("TESTED NUMBER:\t\t", testNumber)
 print("NAIVE ALGO:\t\t", naiveAlgo(arr2, testNumber))
 print("BINARY ALGO:\t\t", binaryAlgo(arr2, testNumber))
