@@ -22,9 +22,9 @@ def complexify(passphrase, key):
     for element in passphrase:
         
         # If element is alpha
-        if element in alpha:
+        if element.lower() in alpha:
             # Shift into alphabet
-            currentIndex = alpha.index(element)
+            currentIndex = alpha.index(element.lower())
             # Loop back into alphabet
             newIndex = (currentIndex + key) % 26
             # If count is even, letter are lowercase
@@ -50,5 +50,5 @@ def complexify(passphrase, key):
     return newPassphrase[::-1]
         
 
-print(complexify("abc.xyz-- 159", 1))
+print(complexify("I LOVE YOU!!!", 1))
 print(complexify("abc.xyz-- 159", 26))
