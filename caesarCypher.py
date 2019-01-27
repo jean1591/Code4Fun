@@ -11,6 +11,9 @@ import re
 
 alphabet = string.ascii_lowercase
 
+msg = input("Message to code:\n")
+key = int(input("Key message:\n"))
+
 def caesarCypher(msg, key):
     """
     Caesar cypher code
@@ -70,16 +73,12 @@ def caesarDecypher(msg, key):
     return: str, decyphered message
     """
     return caesarCypher(msg, ((26-key) % 26))
-    
 
-print("INITIAL STRING:")
-toCode = "Strips all non-alpha characters from a string param: str, message to strip of all non-alpha characters return: str, msg with only alpha characters"
-print(toCode)
 
 print("\nCODED MESSAGE:")
-toDecode = caesarCypher(toCode, 5)
+toDecode = caesarCypher(msg, key)
 print(toDecode)
 
 print("\nDECODED MESSAGE:")
-decoded = caesarDecypher(toDecode, 5)
+decoded = caesarDecypher(toDecode, key)
 print(decoded)

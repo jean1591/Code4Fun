@@ -11,13 +11,17 @@ import re
 
 alphabet = string.ascii_lowercase
 
+msg = input("Message to code:\n")
+key = input("Key message:\n")
+
 def vigenereCypher(msg, key):
     """
     Vigenere cypher code
     param: msg, str, message to code
     param: key, str, shift value 
     returm: str, coded message
-    """
+    """    
+    
     # Strip all non-alpha
     msg = stripNonAlpha(msg)
     
@@ -106,14 +110,10 @@ def vigenereDecypher(msg, key):
     return result
 
 
-print("INITIAL STRING:")
-toCode = "Strips all non-alpha characters from a string param: str, message to strip of all non-alpha characters return: str, msg with only alpha characters"
-print(toCode)
-
 print("\nCODED MESSAGE:")
-toDecode = vigenereCypher(toCode, "LEMON")
+toDecode = vigenereCypher(msg, key)
 print(toDecode)
 
 print("\nDECODED MESSAGE:")
-decoded = vigenereDecypher(toDecode, "LEMON")
+decoded = vigenereDecypher(toDecode, key)
 print(decoded)
