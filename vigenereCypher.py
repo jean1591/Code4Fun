@@ -103,12 +103,6 @@ def vigenereDecypher(msg, key):
         result += alphabet[newIndex].upper()
         count += 1
     
-    # Add extra "-" at the end of the coded message
-    if count % 5 != 0:
-        addN = 5 - (count % 5)
-        for element in range(addN):
-            result += "-"
-    
     return result
 
 
