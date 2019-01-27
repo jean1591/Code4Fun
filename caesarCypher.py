@@ -20,9 +20,12 @@ def caesarCypher(msg, key):
     """
     # Strip all non-alpha
     msg = stripNonAlpha(msg)
+    
+    # Init variables
     result = ""
     count = 0
     line = 0
+    
     for element in msg:
         # Separates letters by group of 5 letters
         if count % 5 == 0 and count != 0:
@@ -72,8 +75,11 @@ def caesarDecypher(msg, key):
 print("INITIAL STRING:")
 toCode = "Strips all non-alpha characters from a string param: str, message to strip of all non-alpha characters return: str, msg with only alpha characters"
 print(toCode)
+
 print("\nCODED MESSAGE:")
 toDecode = caesarCypher(toCode, 5)
 print(toDecode)
+
 print("\nDECODED MESSAGE:")
-print(caesarDecypher(toDecode, 5))
+decoded = caesarDecypher(toDecode, 5)
+print(decoded)
