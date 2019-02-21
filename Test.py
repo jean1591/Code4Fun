@@ -29,27 +29,43 @@ def isDivisibleBy(toDivide, dividedBy):
 
 
 def isDivisibleByList(toDivide, dividedBy):
+    # [5, 2]
     for element in dividedBy:
-        if element % toDivide!= 0:
+        # 10 / 5 & 10 / 2
+        if toDivide % element != 0:
             return False
     return True
 
 
 """ A TERMINER CI-DESSOUS """
+"""
 def findMultiplesToZero(number):
     result = []
     width = range(0, number+1)
     width = width[1:]
     
     for element in width[::-1]:
-        print(element, end = "")
+        print(element, end = ", ")
         if len(result) == 0:
+            print("Not in list", True, end = ", ")
             result.append(element)
             continue
         
         if (not isDivisibleByList(element, result)):
-
             result.append(element)
+
+    return result
+"""
+def findMultiplesToZero(number):
+    result = []
+
+    for element in range(number)[::-1]:
+        for item in range(number):
+            if item != 0 and item != 1 and element != 0 and element != item:
+                # print(not isDivisibleBy(element, item))
+                if (isDivisibleBy(element, item)):
+                    continue
+        result.append(element)
 
     return result
 
