@@ -35,19 +35,16 @@ def montyHall():
     # Pick the last door in the list and returns it
     myInitialDoor = initialDoors.pop()
     
-    # Makes sure MontyHall's door is different from winningDoor
+    # Makes sure montyHallDoor is different from winningDoor
     montyHallDoor = initialDoors[0]
     if montyHallDoor == winningDoor:
         montyHallDoor = initialDoors[1]
     initialDoors.remove(montyHallDoor)
         
-    # -----------------------------------------------------------
-    # At this point:
-    # myInitialDoor and winningDoor are different from montyHallDoor
-    # But myInitialDoor can be the winningDoor
-    
     # ---------- TOUR 2 ----------
-    
+    # At this point, myInitialDoor and winningDoor are different from montyHallDoor
+    # but myInitialDoor can be the winningDoor
+        
     # Create a secondary list with myInitialDoor, and the remaining door from
     # Tour 1
     finalDoors = []
